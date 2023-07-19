@@ -19,7 +19,8 @@ public class BrowserFactory {
         switch (ReadProperties.browserName().toLowerCase()) {
             case "chrome" :
                 driverManagerType = DriverManagerType.CHROME;
-                WebDriverManager.getInstance(driverManagerType).setup();
+                //WebDriverManager.getInstance(driverManagerType).setup();
+                WebDriverManager.chromedriver().driverVersion("114.0.5735.90").setup();
 
                 driver = new ChromeDriver(getChromeOptions());
                 break;
@@ -38,6 +39,7 @@ public class BrowserFactory {
     public WebDriver getDriver() {
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         return this.driver;
     }
