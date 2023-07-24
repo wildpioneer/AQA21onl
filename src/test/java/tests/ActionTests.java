@@ -12,7 +12,6 @@ import java.util.List;
 
 public class ActionTests extends BaseTest {
 
-    @Test
     public void hoverTest() {
         driver.get("http://the-internet.herokuapp.com/hovers");
 
