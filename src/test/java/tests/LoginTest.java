@@ -3,6 +3,8 @@ package tests;
 import baseEntities.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.DashboardPage;
+import pages.LoginPage;
 import utils.configuration.ReadProperties;
 
 public class LoginTest extends BaseTest {
@@ -39,4 +41,11 @@ public class LoginTest extends BaseTest {
                 "Неверное сообщение об ошибке");
     }
 
+
+    @Test
+    public void loadableTest() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login(ReadProperties.username(), ReadProperties.password());
+        DashboardPage dashboardPage = new DashboardPage(driver);
+    }
 }
