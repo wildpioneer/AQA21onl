@@ -12,7 +12,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void successLoginTest() {
         Assert.assertTrue(
-                loginStep.successLogin(DataHelper.getUser()).isPageOpened()
+                loginStep.successLogin(DataHelper.getAdminUser()).isPageOpened()
         );
     }
 
