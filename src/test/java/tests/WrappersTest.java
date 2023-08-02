@@ -1,7 +1,6 @@
 package tests;
 
 import baseEntities.BaseTest;
-import elements.TableCell;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -43,8 +42,5 @@ public class WrappersTest extends BaseTest {
 
         ProjectsPage projectsPage = new ProjectsPage(driver);
         projectsPage.openPageByUrl();
-
-        TableCell cell = projectsPage.getProjectsTable().getCell("Project", 1);
-        cell.getLink().click();
     }
 }

@@ -1,8 +1,6 @@
 package tests;
 
 import baseEntities.BaseTest;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.configuration.ReadProperties;
@@ -23,7 +21,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void incorrectEmailLoginTest() {
         Assert.assertEquals(
-                loginStep.negativeLogin("sdsd", ReadProperties.password()).getErrorTextElement().getText(),
+                loginStep.negativeLogin("sdsd", ReadProperties.password()).errorText.getText(),
                 "Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
     }
@@ -31,7 +29,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void incorrectPswLoginTest() {
         Assert.assertEquals(
-                loginStep.negativeLogin(ReadProperties.username(), "123").getErrorTextElement().getText(),
+                loginStep.negativeLogin(ReadProperties.username(), "123").errorFieldText.getText(),
                 "Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
     }
