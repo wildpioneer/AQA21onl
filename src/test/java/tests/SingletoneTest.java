@@ -1,14 +1,13 @@
 package tests;
 
+import factory.BrowserSingleton;
 import helper.DataHelper;
-import models.Project;
-import models.User;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import steps.LoginStep;
-import utils.configuration.ReadProperties;
 
-public class LoginTest extends BaseTest {
+public class SingletoneTest extends BaseTest {
 
     @Test
     public void successLoginTest() {

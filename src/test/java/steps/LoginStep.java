@@ -1,26 +1,18 @@
 package steps;
 
-import baseEntities.BaseStep;
+import factory.BrowserSingleton;
 import models.User;
 import org.openqa.selenium.WebDriver;
 import pages.DashboardPage;
 import pages.LoginPage;
+import utils.configuration.ReadProperties;
 
-public class LoginStep extends BaseStep {
-
-    public LoginStep(WebDriver driver) {
-        super(driver);
-    }
+public class LoginStep {
 
     public DashboardPage successLogin(User user) {
-        loginPage.login(user);
+        BrowserSingleton.getInstance().driver.get(ReadProperties.getUrl());
+        new LoginPage().login(user);
 
-        return dashboardPage;
-    }
-
-    public LoginPage negativeLogin(User user) {
-        loginPage.login(user);
-
-        return loginPage;
+        return new DashboardPage();
     }
 }

@@ -1,5 +1,6 @@
 package services;
 
+import factory.BrowserSingleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,13 +18,13 @@ public class WaitService {
     private WebDriverWait wait;
     private WebDriver driver;
 
-    public WaitService(WebDriver driver, Duration timeout) {
-        this.driver = driver;
+    public WaitService(Duration timeout) {
+        this.driver = BrowserSingleton.getInstance().driver;;
         this.wait = new WebDriverWait(driver, timeout);
     }
 
-    public WaitService(WebDriver driver) {
-        this.driver = driver;
+    public WaitService() {
+        this.driver = BrowserSingleton.getInstance().driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(ReadProperties.timeout()));
     }
 

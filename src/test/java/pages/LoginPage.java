@@ -1,16 +1,12 @@
 package pages;
 
-import baseEntities.BasePage;
+import factory.BrowserSingleton;
 import models.User;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import services.WaitService;
 
-import java.time.Duration;
-
-public class LoginPage extends BasePage {
+public class LoginPage {
 
     // Блок описания локаторов для элементов
     private final By emailInputLocator = By.id("name");
@@ -19,14 +15,11 @@ public class LoginPage extends BasePage {
     private final By errorTextLocator = By.className("error-text");
     private final By errorFieldTextLocator = By.className("loginpage-message");
 
-    // Блок инициализации
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
+    private WaitService waitService;
 
-    @Override
-    protected By getPageIdentifier() {
-        return logInButtonLocator;
+    // Блок инициализации
+    public LoginPage() {
+        waitService = new WaitService();
     }
 
     // Блок атомарных методов
@@ -43,7 +36,7 @@ public class LoginPage extends BasePage {
     }
 
     public WebElement getLogInButton() {
-        return driver.findElement(logInButtonLocator);
+        return BrowserSingleton.getInstance().driver.findElement(logInButtonLocator);
     }
 
     public void setEmail(String value) {
@@ -51,11 +44,11 @@ public class LoginPage extends BasePage {
     }
 
     public WebElement getErrorTextElement() {
-        return driver.findElement(errorTextLocator);
+        return BrowserSingleton.getInstance().driver.findElement(errorTextLocator);
     }
 
     public WebElement getErrorFieldTextElement() {
-        return driver.findElement(errorFieldTextLocator);
+        return BrowserSingleton.getInstance().driver.findElement(errorFieldTextLocator);
     }
 
     // Блок комплексных методов
