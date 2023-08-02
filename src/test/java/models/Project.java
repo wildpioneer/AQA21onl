@@ -10,51 +10,35 @@ public class Project {
     private Date date;
     private Milestone milestone;
 
-    public Milestone getMilestone() {
-        return milestone;
-    }
+    public static class Builder {
+        private Project newProject;
 
-    public void setMilestone(Milestone milestone) {
-        this.milestone = milestone;
-    }
+        public Builder() {
+            this.newProject = new Project();
+        }
 
-    public String getProjectName() {
-        return projectName;
-    }
+        public Builder withProjectName(String projectName) {
+            newProject.projectName = projectName;
+            return this;
+        }
 
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
-    }
+        public Builder withAnnouncement(String announcement) {
+            newProject.announcement = announcement;
+            return this;
+        }
 
-    public String getAnnouncement() {
-        return announcement;
-    }
+        public Builder withFlag(boolean flag) {
+            newProject.flag = flag;
+            return this;
+        }
 
-    public void setAnnouncement(String announcement) {
-        this.announcement = announcement;
-    }
+        public Builder withProjectType(int projectType) {
+            newProject.projectType = projectType;
+            return this;
+        }
 
-    public boolean isFlag() {
-        return flag;
-    }
-
-    public void setFlag(boolean flag) {
-        this.flag = flag;
-    }
-
-    public int getProjectType() {
-        return projectType;
-    }
-
-    public void setProjectType(int projectType) {
-        this.projectType = projectType;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
+        public Project build() {
+            return newProject;
+        }
     }
 }
