@@ -2,22 +2,16 @@ package models;
 
 import lombok.*;
 
-@Data
-@AllArgsConstructor
-@RequiredArgsConstructor
-public class User {
+@Builder
+@ToString
+@EqualsAndHashCode
+public class UserBuilder {
     @EqualsAndHashCode.Exclude
     private int id;
-
-    @NonNull
     private String username;
-
-    @NonNull @With(AccessLevel.PROTECTED)
     private String password;
-
-    //@ToString.Exclude
     private String email;
 
-    //@ToString.Exclude
+    @ToString.Exclude
     private String code;
 }
