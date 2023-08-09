@@ -43,7 +43,7 @@ public class BrowserFactory {
     public WebDriver getDriver() {
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
 
         return this.driver;
     }
@@ -57,6 +57,7 @@ public class BrowserFactory {
         chromeOptions.addArguments("--silent");
         chromeOptions.addArguments("--start-maximized");
         chromeOptions.addArguments("--incognito");
+        chromeOptions.setHeadless(true);
 
         return chromeOptions;
     }

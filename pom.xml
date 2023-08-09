@@ -13,6 +13,10 @@
         <maven.compiler.source>11</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <aspectj.version>1.9.5</aspectj.version>
+        <testng.version>7.7.1</testng.version>
+        <selenium-java.version>4.10.0</selenium-java.version>
+        <webdrivermanager.version>5.4.1</webdrivermanager.version>
+        <testng.xml.path>src/test/resources/smoke.xml</testng.xml.path>
     </properties>
 
     <dependencies>
@@ -20,19 +24,20 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.7.1</version>
+            <version>${testng.version}</version>
+            <!--scope>test</scope-->
         </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.10.0</version>
+            <version>${selenium-java.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.4.1</version>
+            <version>${webdrivermanager.version}</version>
         </dependency>
 
         <dependency>
@@ -52,8 +57,14 @@
             <artifactId>jackson-dataformat-xml</artifactId>
             <version>2.14.0</version>
         </dependency>
-    </dependencies>
 
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.23.0</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -90,6 +101,11 @@
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
             </plugin>
         </plugins>
     </build>
