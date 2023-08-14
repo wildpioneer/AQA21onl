@@ -1,5 +1,6 @@
 package services;
 
+import elements.UIElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,6 +35,12 @@ public class WaitService {
     public WebElement waitForVisibility(WebElement element) {
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
+
+    public UIElement waitForVisibility(UIElement element) {
+        return new UIElement(driver, wait.until(ExpectedConditions.visibilityOf(element.getWebElement())));
+    }
+
+
 
     public WebElement waitForVisibilityLocatedBy(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
