@@ -1,9 +1,12 @@
 package pages;
 
 import baseEntities.BasePage;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class DashboardPage extends BasePage {
     private final static String pagePath = "/index.php?/dashboard/";
@@ -15,11 +18,11 @@ public class DashboardPage extends BasePage {
     public SideMenuPage sideMenuPage;
 
     // Блок инициализации
-    public DashboardPage(WebDriver driver) {
-        super(driver);
+    public DashboardPage() {
+        super();
 
-        topMenuPage = new TopMenuPage(driver);
-        sideMenuPage = new SideMenuPage(driver);
+        topMenuPage = new TopMenuPage();
+        sideMenuPage = new SideMenuPage();
     }
 
     @Override
@@ -32,7 +35,7 @@ public class DashboardPage extends BasePage {
     }
 
     // Блок атомарных методов
-    public WebElement getHeaderTitle() {
-        return driver.findElement(headerTitleLabelLocator);
+    public SelenideElement getHeaderTitle() {
+        return $(headerTitleLabelLocator);
     }
 }

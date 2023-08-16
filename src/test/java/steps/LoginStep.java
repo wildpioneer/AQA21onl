@@ -8,8 +8,8 @@ import pages.LoginPage;
 
 public class LoginStep extends BaseStep {
 
-    public LoginStep(WebDriver driver) {
-        super(driver);
+    public LoginStep() {
+        super();
     }
 
     public DashboardPage successLogin(User user) {

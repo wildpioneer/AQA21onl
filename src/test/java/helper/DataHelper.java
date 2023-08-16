@@ -2,12 +2,11 @@ package helper;
 
 import models.Project;
 import models.User;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 import utils.configuration.ReadProperties;
 
 public class DataHelper {
-    static Logger logger = LogManager.getLogger(DataHelper.class);
+    static Logger logger = Logger.getLogger(DataHelper.class);
 
     public static User getAdminUser() {
         User user = new User();

@@ -20,12 +20,12 @@ public class WaitService {
 
     public WaitService(WebDriver driver, Duration timeout) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, timeout);
+        //this.wait = new WebDriverWait(driver, timeout);
     }
 
     public WaitService(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(ReadProperties.timeout()));
+        //this.wait = new WebDriverWait(driver, Duration.ofSeconds(ReadProperties.timeout()));
     }
 
     public WebElement waitForExists(By locator) {
