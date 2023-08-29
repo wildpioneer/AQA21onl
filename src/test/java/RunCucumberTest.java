@@ -4,7 +4,8 @@ import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
         features = {"src/test/resources/features"},
-        plugin = {"json:target/cucumber.json", "html:target/site/cucumber-pretty.html"},
+        plugin = {"json:target/cucumber.json",
+                "html:target/site/cucumber-pretty.html"},
         glue = "stepDefs",
         tags = "@gui"
 )
