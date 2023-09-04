@@ -2,6 +2,7 @@ package tests.api;
 
 import adapters.ProjectAdapter;
 import baseEntities.BaseApiTest;
+import helpers.GsonHelper;
 import io.restassured.mapper.ObjectMapperType;
 import io.restassured.response.Response;
 import models.Project;
@@ -100,7 +101,9 @@ public class TestRailApiTest1 extends BaseApiTest {
         expectedProject.setProjectType(3);
         expectedProject.setFlag(false);
 
-        new ProjectAdapter().add(expectedProject);
+        Response response = new ProjectAdapter().add(expectedProject);
+        Project actualProject = GsonHelper.getProjectFromJson(response.getBody().asString());
+        System.out.println(actualProject.toString());
     }
 
     @Test

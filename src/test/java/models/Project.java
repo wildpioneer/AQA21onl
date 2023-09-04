@@ -1,6 +1,7 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 
@@ -12,6 +13,7 @@ public class Project {
     @JsonProperty("name")
     private String projectName;
 
+    //@Expose
     private String announcement;
 
     @SerializedName(value = "show_announcement")
