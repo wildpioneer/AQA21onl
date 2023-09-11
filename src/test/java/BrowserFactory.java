@@ -7,5 +7,6 @@ public class BrowserFactory {
     public BrowserFactory() {
         // Не так - надо через WebDriver Manager
         this.driver = new ChromeDriver();
+        // Тест конфликтов
     }
 }
