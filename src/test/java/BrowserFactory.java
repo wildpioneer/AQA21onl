@@ -9,7 +9,7 @@ public class BrowserFactory {
         this.driver = new ChromeDriver();
         // Тест конфликтов
 
+        String result = "asdwecdzczczd";
         String test = "sdfsdf";
-
     }
 }
