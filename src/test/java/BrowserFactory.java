@@ -5,6 +5,7 @@ public class BrowserFactory {
     protected WebDriver driver;
 
     public BrowserFactory() {
+        // Не так - надо через WebDriver Manager
         this.driver = new ChromeDriver();
         // Тест конфликтов
     }
