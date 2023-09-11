@@ -6,5 +6,6 @@ public class BrowserFactory {
 
     public BrowserFactory() {
         this.driver = new ChromeDriver();
+        // Тест конфликтов
     }
 }
