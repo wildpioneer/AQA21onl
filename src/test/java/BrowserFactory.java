@@ -8,5 +8,7 @@ public class BrowserFactory {
         // Не так - надо через WebDriver Manager
         this.driver = new ChromeDriver();
         // Тест конфликтов
+
+        String result = "asdwecdzczczd";
     }
 }
