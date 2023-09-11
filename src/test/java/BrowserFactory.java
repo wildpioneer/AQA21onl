@@ -10,5 +10,6 @@ public class BrowserFactory {
         // Тест конфликтов
 
         String result = "asdwecdzczczd";
+        String test = "sdfsdf";
     }
 }
